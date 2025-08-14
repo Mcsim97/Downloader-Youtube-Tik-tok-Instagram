@@ -1,0 +1,35 @@
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Видео Downloader</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Видео Downloader</h1>
+    <p class="muted">Вставь ссылку на YouTube / TikTok / Instagram. По умолчанию сохраняется в папку <code>видео/</code>.</p>
+
+    <form id="download-form">
+      <label for="url">Ссылка на видео</label>
+      <input id="url" name="url" type="url" placeholder="https://..." required />
+
+      <details>
+        <summary>Дополнительно (куки для Instagram и др.)</summary>
+        <div class="row">
+          <label for="useCookies" class="checkbox">
+            <input type="checkbox" id="useCookies" /> Использовать cookies.txt
+          </label>
+        </div>
+      </details>
+
+      <button type="submit">Скачать</button>
+    </form>
+
+    <div id="status" class="status hidden"></div>
+    <div id="result" class="result hidden"></div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
