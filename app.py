@@ -77,5 +77,6 @@ def downloads(filename):
     return send_from_directory(DOWNLOAD_DIR, filename, as_attachment=True)
 
 if __name__ == '__main__':
-    # Запуск в dev-режиме
-    app.run(host='127.0.0.1', port=5000, debug=True)
+    import os
+    port = int(os.environ.get('PORT', 5000))  # Render назначает свой порт
+    app.run(host='0.0.0.0', port=port, debug=True)
